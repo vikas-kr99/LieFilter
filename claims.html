@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Submitted Claims</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        LieFilter
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="submit.html">Submit Claim</a>
+
+        <a href="claims.html">Claims</a>
+
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <h1>Submitted Claims</h1>
+
+    <p>Community submitted fact-check requests</p>
+
+</section>
+
+<section class="latest">
+    
+<div class="filter-box">
+
+    <button onclick="filterClaims('All')">
+        All
+    </button>
+
+    <button onclick="filterClaims('Politics')">
+        Politics
+    </button>
+
+    <button onclick="filterClaims('Sports')">
+        Sports
+    </button>
+
+    <button onclick="filterClaims('Technology')">
+        Technology
+    </button>
+
+    <button onclick="filterClaims('Entertainment')">
+        Entertainment
+    </button>
+
+</div>
+
+    <div class="facts"
+    id="claimsContainer">
+
+    </div>
+
+</section>
+
+<script src="js/claims.js"></script>
+
+</body>
+
+</html>

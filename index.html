@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LieFilter</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        LieFilter
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="submit.html">Submit Claim</a>
+        <a href="login.html">Admin Login</a>
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <h1>Fight Against Fake News</h1>
+
+    <p>Verify news before sharing.</p>
+
+    <input type="text" id="searchInput" placeholder="Search fact checks...">
+
+    <button onclick="searchFact()">Search</button>
+
+</section>
+
+<section class="latest">
+
+    <h2>Latest Fact Checks</h2>
+
+    <div class="facts">
+
+    <div class="card">
+
+        <h3>₹5000 Government Scheme</h3>
+
+        <p>Status: ❌ Fake</p>
+
+        <button onclick="showPopup('₹5000 Government Scheme','❌ Fake')">
+            Read More
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h3>New Education Policy</h3>
+
+        <p>Status: ✅ True</p>
+
+        <button onclick="showPopup('New Education Policy','✅ True')">
+            Read More
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Viral AI Image</h3>
+
+        <p>Status: ⚠ Misleading</p>
+
+        <button onclick="showPopup('Viral AI Image','⚠ Misleading')">
+            Read More
+        </button>
+
+    </div>
+
+</div>
+
+
+    </div>
+
+    <!-- ADD FACT SECTION -->
+
+    <div class="add-fact">
+
+        <h2>Add New Fact Check</h2>
+
+        <input type="text" id="title" placeholder="Enter Title">
+
+        <input type="text" id="status" placeholder="Enter Status">
+
+        <button onclick="addFact()">Add Fact</button>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>© 2026 LieFilter</p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+<!-- POPUP -->
+
+<div id="popup" class="popup">
+
+    <div class="popup-content">
+
+        <span class="close" onclick="closePopup()">&times;</span>
+
+        <h2 id="popupTitle"></h2>
+
+        <p id="popupText"></p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
