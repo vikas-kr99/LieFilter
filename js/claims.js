@@ -42,13 +42,19 @@ async function submitClaim(){
 
 /* SHOW CLAIMS */
 
-async function loadClaims(){
+async function loadClaims(category = "All"){
 
     let response = await fetch(
         "https://liefilter-backend.onrender.com/claims"
     );
 
     let claims = await response.json();
+    if(category !== "All"){
+
+    claims = claims.filter(claim =>
+        claim.category === category
+    );
+}
 
     let container =
         document.getElementById("claimsContainer");
@@ -171,4 +177,10 @@ async function deleteClaim(id){
     alert(data.message);
 
     loadClaims();
+}
+
+function filterClaims(category){
+
+    loadClaims();
+
 }
