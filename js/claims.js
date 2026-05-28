@@ -20,7 +20,7 @@ async function submitClaim(){
 
     let response = await fetch(
 
-        "http://localhost:5000/add-claim",
+        "https://liefilter-backend.onrender.com/add-claim",
 
         {
             method:"POST",
@@ -45,7 +45,7 @@ async function submitClaim(){
 async function loadClaims(){
 
     let response = await fetch(
-        "http://localhost:5000/claims"
+        "https://liefilter-backend.onrender.com/claims"
     );
 
     let claims = await response.json();
@@ -125,7 +125,7 @@ async function verifyClaim(id,status){
 
     let response = await fetch(
 
-        `http://localhost:5000/verify-claim/${id}`,
+        `https://liefilter-backend.onrender.com/verify-claim/${id}`,
 
         {
             method:"PUT",
