@@ -80,7 +80,7 @@ async function loadClaims(){
 
         `;
 
-        if(window.location.pathname
+       if(window.location.pathname
 .includes("admin-dashboard.html")){
 
     card.innerHTML += `
@@ -101,18 +101,17 @@ async function loadClaims(){
 
             Mark Fake
 
-            <button onclick="deleteClaim(
-    '${claim._id}'
-)">
+        </button>
 
-    Delete
+        <button onclick="deleteClaim(
+            '${claim._id}'
+        )">
 
-</button>
+            Delete
 
         </button>
     `;
 }
-
         container.appendChild(card);
 
     });
@@ -150,6 +149,26 @@ async function verifyClaim(id,status){
 /* LOAD PAGE */
 
 if(document.getElementById("claimsContainer")){
+
+    loadClaims();
+}
+
+/* DELETE CLAIM */
+
+async function deleteClaim(id){
+
+    let response = await fetch(
+
+        `https://liefilter-backend.onrender.com/delete-claim/${id}`,
+
+        {
+            method:"DELETE"
+        }
+    );
+
+    let data = await response.json();
+
+    alert(data.message);
 
     loadClaims();
 }
