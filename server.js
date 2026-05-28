@@ -14,9 +14,7 @@ app.use(express.json());
 
 /* DATABASE CONNECT */
 
-mongoose.connect(
-    "mongodb://127.0.0.1:27017/liefilter"
-)
+mongoose.connect(process.env.MONGODB_URI)
 
 .then(() => console.log("MongoDB Connected"))
 
