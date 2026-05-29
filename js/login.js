@@ -6,16 +6,22 @@ function login(){
     let password =
         document.getElementById("password").value;
 
-    if(username === "admin" &&
-       password === "1234"){
+    if(
+        username === "admin"
+        &&
+        password === "admin123"
+    ){
 
-        alert("Login Successful");
+        localStorage.setItem(
+            "admin",
+            "true"
+        );
 
-       window.location.href =
-"admin-dashboard.html";
-    }
-    else{
+        window.location.href =
+            "admin-dashboard.html";
 
-        alert("Wrong Username or Password");
+    }else{
+
+        alert("Wrong Credentials");
     }
 }

@@ -37,10 +37,9 @@
 </header>
 
 <section class="latest">
-
-    <h2>
-        Pending Claims
-    </h2>
+    <h2 class="dashboard-title">
+    Pending Claims
+</h2>
 
     <div id="claimsContainer"
     class="facts">
@@ -50,6 +49,17 @@
 </section>
 
 <script src="js/claims.js"></script>
+
+<script>
+
+if(localStorage.getItem("admin")
+!== "true"){
+
+    window.location.href =
+    "login.html";
+}
+
+</script>
 
 </body>
 
