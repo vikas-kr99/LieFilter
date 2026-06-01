@@ -8,6 +8,8 @@ const ClaimSchema = new mongoose.Schema({
 
     category:String,
 
+    userEmail:String,
+
     status:{
         type:String,
         default:"Pending"

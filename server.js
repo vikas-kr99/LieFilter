@@ -23,6 +23,78 @@ mongoose.connect(process.env.MONGODB_URI)
 /* MODEL */
 
 const Claim = require("./models/Claim");
+const User = require("./models/User");
+
+/* REGISTER USER */
+
+app.post("/register", async(req,res) => {
+
+    try{
+
+        const user = new User({
+
+            username:req.body.username,
+
+            email:req.body.email,
+
+            password:req.body.password
+
+        });
+
+        await user.save();
+
+        res.json({
+            message:"Registration Successful"
+        });
+
+    }catch(error){
+
+        res.json({
+            message:error.message
+        });
+
+    }
+
+});
+
+/* LOGIN USER */
+
+app.post("/login-user", async(req,res) => {
+
+    try{
+
+        const user = await User.findOne({
+
+            email:req.body.email,
+
+            password:req.body.password
+
+        });
+
+        if(user){
+
+            res.json({
+                message:"Login Successful",
+                user:user
+            });
+
+        }else{
+
+            res.json({
+                message:"Invalid Email or Password"
+            });
+
+        }
+
+    }catch(error){
+
+        res.json({
+            message:error.message
+        });
+
+    }
+
+});
 
 /* ADD CLAIM */
 
