@@ -160,6 +160,32 @@ async(req,res) => {
 
 });
 
+/* MY CLAIMS */
+
+app.get("/my-claims/:email", async(req,res) => {
+
+    try{
+
+        const claims =
+            await Claim.find({
+
+                userEmail:
+                req.params.email
+
+            });
+
+        res.json(claims);
+
+    }catch(error){
+
+        res.json({
+            message:error.message
+        });
+
+    }
+
+});
+
 /* DELETE CLAIM */
 
 app.delete("/delete-claim/:id",

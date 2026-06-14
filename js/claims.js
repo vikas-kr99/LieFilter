@@ -11,12 +11,17 @@ async function submitClaim(){
     let category =
         document.querySelector("select").value;
 
-    let claimData = {
+    let userEmail =
+    localStorage.getItem("userEmail");
 
-        title,
-        description,
-        category
-    };
+let claimData = {
+
+    title,
+    description,
+    category,
+    userEmail
+
+};
 
     let response = await fetch(
 

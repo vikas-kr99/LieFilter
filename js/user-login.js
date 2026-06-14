@@ -1,4 +1,3 @@
-```js
 async function loginUser(){
 
     let email =
@@ -43,9 +42,8 @@ async function loginUser(){
 
         );
 
-        window.location.href =
-            "submit.html";
+       window.location.href =
+    "submit.html";
     }
-
+w
 }
-```

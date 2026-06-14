@@ -1,5 +1,3 @@
-const mongoose = require("mongoose");
-
 const ClaimSchema = new mongoose.Schema({
 
     title:String,

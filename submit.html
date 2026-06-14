@@ -16,10 +16,20 @@
     </div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="submit.html">Submit Claim</a>
-        <a href="login.html">Admin Login</a>
-    </nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="register.html">User Register</a>
+
+    <a href="user-login.html">User Login</a>
+
+    <a href="submit.html">Submit Claim</a>
+
+    <a href="my-claims.html">View Your Claims</a>
+
+    <a href="login.html">Admin Login</a>
+
+</nav>
 
 </header>
 
@@ -64,6 +74,17 @@
     </div>
 
 </section>
+
+<script>
+
+if(!localStorage.getItem("userEmail")){
+
+    window.location.href =
+    "user-login.html";
+
+}
+
+</script>
 
 <script src="js/claims.js"></script>
 

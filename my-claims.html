@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>User Login</title>
+    <title>My Claims</title>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -17,7 +17,7 @@
         LieFilter
     </div>
 
-   <nav>
+    <nav>
 
     <a href="index.html">Home</a>
 
@@ -39,34 +39,30 @@
 
     <div class="submit-box">
 
-        <h1>User Login</h1>
+        <h1>My Claims</h1>
 
-        <input
-            type="email"
-            id="email"
-            placeholder="Enter Email">
+        <div id="claimsContainer">
 
-        <br><br>
+            No Claims Found
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Enter Password">
-
-        <br><br>
-
-        <button
-            onclick="loginUser()">
-
-            Login
-
-        </button>
+        </div>
 
     </div>
 
 </section>
 
-<script src="js/user-login.js"></script>
+<script>
+
+if(!localStorage.getItem("userEmail")){
+
+    window.location.href =
+    "user-login.html";
+
+}
+
+</script>
+
+<script src="js/my-claims.js"></script>
 
 </body>
 
